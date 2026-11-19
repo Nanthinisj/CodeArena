@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CodeArena | Coding Assessment</title>
+<style>
+:root{--navy:#14213d;--blue:#3157d5;--bg:#f4f6fb;--line:#e4e8f1;--muted:#68738a;--green:#16845b}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:#182238}
+header{height:66px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 26px;position:sticky;top:0;z-index:5}
+.brand{font-weight:800;font-size:21px;color:var(--navy);letter-spacing:-.5px}.brand span{color:var(--blue)}
+.meta{display:flex;gap:22px;align-items:center;font-size:13px;color:var(--muted)}.timer{font-weight:800;color:#a45b12;background:#fff5e7;padding:9px 13px;border-radius:9px}
+.profile{background:#edf1ff;color:#2948b5;border-radius:50%;width:34px;height:34px;display:grid;place-items:center;font-weight:700}
+main{max-width:1440px;margin:22px auto;padding:0 22px}
+.topline{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}.crumb{font-size:13px;color:var(--muted)}h1{font-size:22px;margin:5px 0 0}.status{font-size:12px;color:var(--green);background:#e7f6ef;padding:7px 11px;border-radius:20px;font-weight:700}
+.layout{display:grid;grid-template-columns:minmax(300px, .82fr) minmax(480px,1.5fr);gap:18px;align-items:stretch}
+.panel{background:white;border:1px solid var(--line);border-radius:13px;overflow:hidden;min-height:660px}
+.panel-head{padding:17px 19px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.panel-head h2{font-size:15px;margin:0}.small{font-size:12px;color:var(--muted)}
+.question{padding:20px}.qtag{font-size:11px;font-weight:700;color:var(--blue);background:#edf1ff;padding:6px 9px;border-radius:6px;display:inline-block}
+.question h2{font-size:20px;margin:15px 0 10px}.question p{font-size:13px;line-height:1.65;color:#536078}
+.section-title{font-size:13px;font-weight:750;margin:22px 0 9px}
+.example{background:#f7f8fb;border:1px solid var(--line);border-radius:8px;padding:12px;margin-top:9px}
+.example label{font-size:11px;color:var(--muted);font-weight:700;display:block;margin-bottom:7px}
+pre{margin:0;font:12px/1.7 Consolas,monospace;white-space:pre-wrap;color:#29344b}
+.constraints{padding-left:18px;color:#536078;font-size:13px;line-height:1.8}
+.editor-panel{display:flex;flex-direction:column}
+.editor-toolbar{padding:12px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);gap:10px}
+select{border:1px solid var(--line);border-radius:7px;padding:8px 10px;background:white;color:#29344b}
+.editor-label{font-size:12px;color:var(--muted);font-weight:700}
+.code-area{width:100%;min-height:420px;resize:vertical;border:0;outline:0;padding:20px;background:#101827;color:#dce7ff;font:13px/1.7 Consolas,monospace;tab-size:4}
+.editor-footer{display:flex;justify-content:space-between;align-items:center;padding:13px 16px;border-top:1px solid var(--line);gap:10px;flex-wrap:wrap}
+.btns{display:flex;gap:9px}.btn{border:0;border-radius:8px;padding:10px 15px;font-weight:700;font-size:12px;cursor:pointer}.secondary{background:#eef1f7;color:#33415c}.primary{background:var(--blue);color:white}.submit{background:var(--green);color:white}
+.output{border-top:1px solid var(--line);padding:15px 17px;min-height:105px;background:#fbfcfe}.output strong{font-size:12px}.output p{font-size:12px;color:var(--muted);margin:9px 0 0}
+.footer-note{text-align:center;color:#8992a4;font-size:11px;margin:16px}
+@media(max-width:850px){.layout{grid-template-columns:1fr}.panel{min-height:unset}.code-area{min-height:340px}header{padding:0 14px}.meta{gap:10px}main{padding:0 12px}.topline{align-items:flex-start;gap:10px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">Code<span>Arena</span></div>
+  <div class="meta"><span>Java Programming Assessment</span><span class="timer" id="timer">45:00 remaining</span><div class="profile">S</div></div>
+</header>
+<main>
+  <div class="topline">
+    <div><div class="crumb">My Assessments&nbsp; / &nbsp;Java Programming</div><h1>Assessment: Basic Programming</h1></div>
+    <div class="status">● In progress</div>
+  </div>
+  <div class="layout">
+    <section class="panel">
+      <div class="panel-head"><h2>Problem Description</h2><span class="small">Question 1 of 5</span></div>
+      <div class="question">
+        <span class="qtag">EASY&nbsp; • &nbsp;10 MARKS</span>
+        <h2>Sum of Two Numbers</h2>
+        <p>Write a Java program that reads two integers and prints their sum.</p>
+        <div class="section-title">Input Format</div>
+        <p>The first line contains an integer <b>A</b>. The second line contains an integer <b>B</b>.</p>
+        <div class="section-title">Output Format</div>
+        <p>Print a single integer representing the sum of A and B.</p>
+        <div class="section-title">Sample Input</div>
+        <div class="example"><pre>12
+8</pre></div>
+        <div class="section-title">Sample Output</div>
+        <div class="example"><pre>20</pre></div>
+        <div class="section-title">Explanation</div>
+        <p>12 + 8 = 20, so the program displays 20.</p>
+        <div class="section-title">Constraints</div>
+        <ul class="constraints"><li>-10,000 ≤ A ≤ 10,000</li><li>-10,000 ≤ B ≤ 10,000</li></ul>
+      </div>
+    </section>
+    <section class="panel editor-panel">
+      <div class="panel-head"><h2>Code Editor</h2><span class="small">Autosave: demo only</span></div>
+      <div class="editor-toolbar"><div><span class="editor-label">LANGUAGE&nbsp; </span><select id="language"><option>Java</option><option>Python</option><option>C</option><option>C++</option></select></div><span class="small">Class name: Main</span></div>
+      <textarea class="code-area" id="code" spellcheck="false">import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+
+        int sum = a + b;
+        System.out.println(sum);
+
+        sc.close();
+    }
+}</textarea>
+      <div class="editor-footer">
+        <span class="small">Input is provided through standard input (stdin).</span>
+        <div class="btns"><button class="btn secondary" onclick="showOutput('Sample input loaded: 12 and 8')">Run Sample</button><button class="btn primary" onclick="showOutput('Demo preview: connect a Java execution service to run your code.')">Run Code</button><button class="btn submit" onclick="submitDemo()">Submit</button></div>
+      </div>
+      <div class="output"><strong>OUTPUT / TEST RESULTS</strong><p id="output">Your program output and test-case results will appear here.</p></div>
+    </section>
+  </div>
+  <div class="footer-note">CodeArena • Student Coding Assessment Interface • Preview prototype</div>
+</main>
+<script>
+function showOutput(msg){document.getElementById('output').textContent=msg}
+function submitDemo(){if(confirm('Submit this assessment? This is a preview; no code will be uploaded.'))showOutput('Preview only: submission service is not connected.')}
+let remaining=45*60;
+setInterval(()=>{if(remaining>0){remaining--;let m=String(Math.floor(remaining/60)).padStart(2,'0');let s=String(remaining%60).padStart(2,'0');document.getElementById('timer').textContent=m+':'+s+' remaining'}},1000);
+</script>
+</body>
+</html>
